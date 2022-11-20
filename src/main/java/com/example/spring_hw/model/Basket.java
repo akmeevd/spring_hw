@@ -1,12 +1,13 @@
 package com.example.spring_hw.model;
 
+import java.util.List;
 
-import java.util.ArrayList;
 
 public class Basket {
-    private ArrayList<Integer> ids;
 
-    public Basket(ArrayList<Integer> ids) {
+    private final List<Integer> ids;
+
+    public Basket(List<Integer> ids) {
         this.ids = ids;
     }
 
@@ -18,3 +19,5 @@ public class Basket {
     }
 
 }
+
+
