@@ -1,5 +1,10 @@
 ### Добавление продукта в корзину
 GET http://localhost:8080/store/order/add
+#Content-Type: application/json
+#
+#{
+#  "ids": 1
+#}
 
 
 ### Показать все продукты

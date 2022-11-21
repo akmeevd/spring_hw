@@ -2,7 +2,9 @@ package com.example.spring_hw.controller;
 
 import com.example.spring_hw.model.Basket;
 import com.example.spring_hw.service.BasketService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -16,7 +18,7 @@ public class BasketController {
     }
 
     @GetMapping({"/store/order/add"})
-    public Basket addInBasket(List<Integer> ids) {
+    public Basket addInBasket(@RequestParam("id") List<Integer> ids) {
         return this.basketService.addInBasket(ids);
     }
 
