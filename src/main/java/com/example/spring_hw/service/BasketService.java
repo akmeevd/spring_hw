@@ -1,33 +1,19 @@
 package com.example.spring_hw.service;
-
 import com.example.spring_hw.model.Basket;
 import org.springframework.stereotype.Service;
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import java.util.List;
-
 
 @Service
 public class BasketService {
-    private Basket basket;
+    private final Basket basket = new Basket();
 
-    public Basket addInBasket(List<Integer> ids) {
-        return this.basket = new Basket(ids);
-    }
-    @PostConstruct
-    public void init() {
-        System.out.println("create!");
-    }
-    @PreDestroy
-    public void destroy() {
-        System.out.println("destroy!");
+    public void addInBasket(List<Integer> ids) {
+        this.basket.addId(ids);
     }
 
-    public Basket getBasket() {
-        return this.basket;
+    public List<Integer> getBasket() {
+         return this.basket.getIds();
     }
-
-
     @Override
     public String toString() {
         return "BasketService{" +
